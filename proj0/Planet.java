@@ -23,4 +23,17 @@ public class Planet {
 		mass = p.mass;
 		imgFileName = p.imgFileName;
 	}
+
+	public double calcDistance(Planet b) {
+		double disSquare;
+
+		disSquare = (this.xxPos - b.xxPos) * (this.xxPos - b.xxPos) + (this.yyPos - b.yyPos) * (this.yyPos - b.yyPos);
+
+		double ans = disSquare;
+
+		while (ans * ans - disSquare > 1e-10) {
+			ans = (ans * ans + disSquare) / (2 * ans);
+		}
+		return ans;
+	}
 }

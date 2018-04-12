@@ -47,4 +47,24 @@ public class Planet {
 		force = (G * m1 * m2)/(dis * dis);
 		return force;
 	}
+
+	public double calcForceExertedByX(Planet d) {
+		double forceX;
+		double dis = this.calcDistance(d);
+		double disX = d.xxPos - this.xxPos;
+		double force = this.calcForceExertedBy(d);
+
+		forceX = force * disX / dis;
+		return forceX;
+	}
+
+	public double calcForceExertedByY(Planet e) {
+		double forceY;
+		double dis = this.calcDistance(e);
+		double disY = e.yyPos - this.yyPos;
+		double force = this.calcForceExertedBy(e);
+
+		forceY = force * disY / dis;
+		return forceY;
+	}
 }

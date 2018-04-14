@@ -67,4 +67,26 @@ public class Planet {
 		forceY = force * disY / dis;
 		return forceY;
 	}
+
+	public double calcNetForceExertedByX(Planet[] allPlanet) {
+		double sum = 0;
+
+		for(Planet p : allPlanet) {
+			if(!this.equals(p)) {
+				sum = sum + this.calcForceExertedByX(p);
+			}
+		}
+		return sum;
+	}
+
+	public double calcNetForceExertedByY(Planet[] allPlanet) {
+		double sum = 0;
+
+		for(Planet p : allPlanet) {
+			if(!this.equals(p)) {
+				sum = sum + this.calcForceExertedByY(p);
+			}
+		}
+		return sum;
+	}
 }

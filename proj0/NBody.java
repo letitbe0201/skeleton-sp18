@@ -27,4 +27,14 @@ public class NBody {
 		}
 		return allPlanet;
 	}
+
+	public static void main(String[] args) {
+		double T = Double.parseDouble(arg[0]);
+		double dt = Double.parseDouble(arg[1]);
+		String filename = arg[2];
+		double radius = NBody.readRadius(filename);
+		Planet[] allPlanet = NBody.readPlanets(filename);
+
+		
+	}
 }
